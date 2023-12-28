@@ -1,0 +1,29 @@
+body {  
+  font-family: "Arial", sans-serif;
+  margin-left: 600px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+form label {
+  display: block;
+  margin: 20px;
+}
+
+form input {
+  width: 250px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #4285f4;
+  color: #fff;
+  padding: 9px 20px;
+  border-radius: 6px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #1c4cff;
+}
