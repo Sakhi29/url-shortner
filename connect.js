@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-require('dotenv').config()
+require("dotenv").config();
 
-url = "mongodb+srv://admin-sakhi:WJGxzK2zx0b5sIrz@cluster0.egoec3k.mongodb.net/?retryWrites=true&w=majority"
+url = process.env.MONGO_URL;
 async function connectToMongoose(url) {
-    return mongoose.connect(url);  
+  return mongoose.connect(url);
 }
 
-module.exports = {connectToMongoose}
+module.exports = { connectToMongoose };
