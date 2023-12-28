@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const { checkForAuthentication, restrictTo } = require("./middlewares/auth");
 const URL = require("./models/url");
 const { connectToMongoose } = require("./connect");
+require('dotenv').config()
 
 const urlRoute = require("./routes/url");
 const staticRoute = require("./routes/staticRouter");
@@ -12,8 +13,7 @@ const userRoute = require("./routes/user");
 const app = express();
 const PORT = 4000;
 
-const uri =
-  "mongodb+srv://admin-sakhi:WJGxzK2zx0b5sIrz@cluster0.egoec3k.mongodb.net/?retryWrites=true&w=majority";
+const uri ="mongodb+srv://admin-sakhi:WJGxzK2zx0b5sIrz@cluster0.egoec3k.mongodb.net/?retryWrites=true&w=majority";
 connectToMongoose(uri).then(() => console.log("Mongodb connected"));
 
 app.set("view engine", "ejs");
@@ -43,6 +43,7 @@ app.get("/url/:shortid", async (req, res) => {
       },
     }
   );
+  console.log(entry.redirectUrl);
   res.redirect(entry.redirectUrl);
 });
 
