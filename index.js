@@ -12,7 +12,8 @@ const userRoute = require("./routes/user");
 const app = express();
 const PORT = 4000;
 
-const uri = "mongodb://127.0.0.1:27017/short-url";
+const uri =
+  "mongodb+srv://admin-sakhi:WJGxzK2zx0b5sIrz@cluster0.egoec3k.mongodb.net/?retryWrites=true&w=majority";
 connectToMongoose(uri).then(() => console.log("Mongodb connected"));
 
 app.set("view engine", "ejs");
